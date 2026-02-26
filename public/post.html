@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Item - Closet Swap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">Closet Swap</a>
+            <nav>
+                <a href="browse.html"><i class="fas fa-compass"></i><span class="nav-text">Browse</span></a>
+                <a href="post.html"><i class="fas fa-plus-square"></i><span class="nav-text">Post</span></a>
+                <a href="profile.html"><i class="fas fa-user"></i><span class="nav-text">Profile</span></a>
+                <a href="login.html" id="login-link"><i class="fas fa-sign-in-alt"></i><span class="nav-text">Login</span></a>
+                <a href="#" id="logout-link" style="display:none;"><i class="fas fa-sign-out-alt"></i><span class="nav-text">Logout</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container" style="max-width: 600px;">
+            <h2 style="text-align: center; margin-bottom: 1.5rem;">Post a New Item</h2>
+            <form id="post-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" class="form-control">
+                        <option>Tops</option>
+                        <option>Bottoms</option>
+                        <option>Shoes</option>
+                        <option>Accessories</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size">Size</label>
+                    <input type="text" id="size" class="form-control" placeholder="e.g., M, 32, 9">
+                </div>
+                <div class="form-group">
+                    <label for="condition">Condition</label>
+                    <select id="condition" class="form-control">
+                        <option>New with tags</option>
+                        <option>Like new</option>
+                        <option>Good</option>
+                        <option>Fair</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="looking-for">Looking for (what you'd like in return)</label>
+                    <input type="text" id="looking-for" class="form-control" placeholder="e.g., hoodies size M">
+                </div>
+                <div class="form-group">
+                    <label for="media">Photos / Videos (up to 5 files)</label>
+                    <input type="file" id="media" class="form-control" accept="image/*,video/*" multiple>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Post Item</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Closet Swap. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>
