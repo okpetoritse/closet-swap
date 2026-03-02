@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '/api';
 
 // Login form submission
 document.getElementById('login-form')?.addEventListener('submit', async (e) => {
