@@ -1,11 +1,15 @@
 const Item = require('../models/Item');
 
 // @desc    Create new item
+
 exports.createItem = async (req, res) => {
   try {
     const { title, category, size, condition, description, lookingFor } = req.body;
-    const files = req.files;
-    const mediaUrls = files ? files.map(file => file.path) : [];
+
+    const files = req.files || [];
+    const mediaUrls = files
+      .map(file => file.path)
+      .filter(Boolean);
 
     const item = await Item.create({
       user: req.user.id,
@@ -15,13 +19,13 @@ exports.createItem = async (req, res) => {
       condition,
       description,
       lookingFor,
-      images: mediaUrls.filter(f => f.match(/\.(jpg|jpeg|png|gif)$/i)),
-      videos: mediaUrls.filter(f => f.match(/\.(mp4|mov)$/i))
+      images: mediaUrls.filter(f => /\.(jpg|jpeg|png|gif)$/i.test(f)),
+      videos: mediaUrls.filter(f => /\.(mp4|mov)$/i.test(f))
     });
 
     res.status(201).json(item);
   } catch (err) {
-    console.error(err);
+    console.error('❌ createItem error:', err);
     res.status(500).json({ msg: 'Server error' });
   }
 };
