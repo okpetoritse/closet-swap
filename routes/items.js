@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { createItem, getItems, getUserItems, getItem } = require('../controllers/itemController');
 const { protect } = require('../middleware/authMiddleware');
-const upload = require('../config/cloudinary');
+// const upload = require('../config/cloudinary');
+const upload = require('../middleware/upload'); 
 
 router.route('/')
   .get(getItems)
@@ -12,3 +13,5 @@ router.get('/user/:userId', getUserItems);
 router.get('/:id', getItem);
 
 module.exports = router;
+
+
