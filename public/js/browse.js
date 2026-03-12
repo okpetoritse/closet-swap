@@ -19,7 +19,7 @@ async function loadItems() {
           <img src="${item.user?.avatar || 'https://via.placeholder.com/36'}" class="card-avatar">
           <span class="card-username">${item.user?.username || 'Anonymous'}</span>
         </div>
-        <img src="${item.images?.[0] || 'https://via.placeholder.com/400x300?text=No+Image'}" 
+        <img src="${item.images?.[0] || '/img/no-image.svg'}" ...
              alt="${item.title}" 
              class="card-image"
              onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
